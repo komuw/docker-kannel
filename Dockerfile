@@ -22,4 +22,4 @@ EXPOSE 13013 13013
 
 WORKDIR /app
 
-CMD ["dinit", "/usr/sbin/bearerbox", "-v", "4", "--", "/etc/kannel/kannel.conf", "--pidfile", "/var/run/kannel/kannel_bearerbox.pid", "--no-extra-args"]
+CMD ["dinit", "/etc/init.d/kannel", "start"]
