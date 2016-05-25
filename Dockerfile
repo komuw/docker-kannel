@@ -18,8 +18,10 @@ RUN apt-get -y purge wget
 
 COPY default.kannel.conf /etc/default/kannel
 
+COPY runapp.sh /app/runapp.sh
+
 EXPOSE 13013 13013
 
 WORKDIR /app
 
-CMD ["dinit", "/usr/sbin/bearerbox", "/etc/kannel/kannel.conf"]
+CMD ["dinit", "/app/runapp.sh"]
